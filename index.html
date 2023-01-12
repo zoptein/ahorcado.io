@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego ahorcado alura</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+</head>
+<body>
+    <header>
+        <button class="reload" type="button" onclick="reload()">
+            <img src="img/Vector.png" alt="logo">
+        </button> 
+    </header>
+
+<main class="grid-container">
+    <div id="desaparece-botones" class="botones">
+        <button id="iniciar-juego" class="btn-iniciar" onclick="iniciarJuego(),desapareceBtnIniciales()">Iniciar Juego</button>
+        <button id="agregar-palabra" class="btn-agregar" onclick="desapareceBtnIniciales(),apareceElementos()"> Agregar nueva palabra</button>
+    </div>
+
+    <div id="aparece-llenar-texto" class="texto" hidden>
+        <textarea id="textoIngresar" cols="30" rows="10" placeholder="Ingrese una palabra"></textarea>
+        <p id="advertencia"><i class="fa-solid fa-circle-exclamation"></i> Solo letras mayusculas y sin acentos</p>
+        <button class="boton1" type="button" onclick="creaPalabra()">Guardar y empezar</button>
+        <button class="boton2" type="button" onclick="reload()">Cancelar</button>
+    </div>
+
+    <div id="canvas" class="canvas" hidden>
+        <canvas id="horca" width="1200" height="860"></canvas>
+    </div>
+
+    <div class="palabraSecreta">
+        <div id="palabraSecretauno" class="palabraSecretauno" hidden>
+            <span>Cantidad de Intentos errados</span>
+            <span id="muestra-cantidad-errados"></span>
+        </div>
+        <div id="palabraSecretados" class="palabraSecretados" hidden>
+            <span>La Palabra correcta era:</span>
+            <span id="muestra-palabra-secreta"></span>
+        </div>
+        
+    </div>
+    
+</main>
+
+<div id="botones-juego" class="botones-juego" hidden>
+    <button class="boton1" type="button" onclick="iniciarJuego(),aparecePalabraSecreta()">Nuevo Juego</button>
+    <button class="boton2" type="button" onclick="reload()">Desistir</button>
+    
+</div>
+
+<div>
+    <input autofocus id="input-escondido" type="text" hidden>
+</div>
+
+
+<hr>
+    <footer>
+        <div class="redes">
+            <a href="https://github.com/zoptein"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/juan-esteban-orozco-galeano-/"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        
+        <div class="copy"> 
+            <p><i class="fa-regular fa-copyright"></i>Derechos reservados</p>
+            <p></i> por zoptein</p>
+        </div>
+        
+    </footer>
+<hr> 
+    
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js "></script>
+    <script src="script.js"></script>
+    <script src="canvas.js"></script>
+    
+</body>
+</html>
